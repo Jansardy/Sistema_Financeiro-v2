@@ -1,0 +1,37 @@
+unit MonolitoFinanceiro.View.RedefinirSenha;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls;
+
+type
+  TfrmRedefinirSenha = class(TForm)
+    pnlBase: TPanel;
+    lblNovaSenha: TLabel;
+    lblSenha: TLabel;
+    imgLogin: TImage;
+    imgSenha: TImage;
+    pnlTop: TPanel;
+    lblUsuario: TLabel;
+    Label1: TLabel;
+    pnlBaixo: TPanel;
+    edtLogin: TEdit;
+    edtSenha: TEdit;
+    btnEntrar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRedefinirSenha: TfrmRedefinirSenha;
+
+implementation
+
+{$R *.dfm}
+
+end.

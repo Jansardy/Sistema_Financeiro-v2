@@ -1,0 +1,21 @@
+program MonolitoFinaceiro;
+
+uses
+  Vcl.Forms,
+  MonolitoFinanceiro.View.Principal in 'src\View\MonolitoFinanceiro.View.Principal.pas' {frmPrincipal},
+  MonolitoFinanceiro.View.Cadastro in 'src\View\MonolitoFinanceiro.View.Cadastro.pas' {frmCadastro},
+  MonolitoFinanceiro.View.Splash in 'src\View\MonolitoFinanceiro.View.Splash.pas' {frmSplash},
+  MonolitoFinanceiro.View.Usuarios in 'src\View\MonolitoFinanceiro.View.Usuarios.pas' {frmUsuarios},
+  MonolitoFinanceiro.Model.Conexao in 'src\Model\MonolitoFinanceiro.Model.Conexao.pas' {dmConexao: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TdmConexao, dmConexao);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmCadastro, frmCadastro);
+  Application.CreateForm(TfrmUsuarios, frmUsuarios);
+  Application.Run;
+end.

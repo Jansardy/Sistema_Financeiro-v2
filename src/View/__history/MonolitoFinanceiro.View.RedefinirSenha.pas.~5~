@@ -1,0 +1,46 @@
+unit MonolitoFinanceiro.View.RedefinirSenha;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  MonolitoFinanceiro.Model.Entidades.Usuarios, Vcl.ExtCtrls;
+
+type
+  TfrmRedefinirSenha = class(TForm)
+    pnlBase: TPanel;
+    lblNovaSenha: TLabel;
+    lblSenha: TLabel;
+    imgLogin: TImage;
+    imgSenha: TImage;
+    pnlTop: TPanel;
+    lblUsuario: TLabel;
+    Label1: TLabel;
+    pnlBaixo: TPanel;
+    edtSenha: TEdit;
+    edtConfirmarSenha: TEdit;
+    btnCancelar: TButton;
+    btnConfirmar: TButton;
+    pnlBotoes: TPanel;
+    procedure btnCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    property Usuario : TMoldeEntidadeUsuario;
+  end;
+
+var
+  frmRedefinirSenha: TfrmRedefinirSenha;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmRedefinirSenha.btnCancelarClick(Sender: TObject);
+begin
+  ModalResult := mrCancel;
+end;
+
+end.

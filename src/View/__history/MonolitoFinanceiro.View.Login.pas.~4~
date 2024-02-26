@@ -1,0 +1,49 @@
+unit MonolitoFinanceiro.View.Login;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
+  Vcl.StdCtrls;
+
+type
+  TfrmLogin = class(TForm)
+    pnlEsquerda: TPanel;
+    pnlBase: TPanel;
+    imgLogo: TImage;
+    pnlTop: TPanel;
+    pnlBaixo: TPanel;
+    lblNameLogo: TLabel;
+    Label1: TLabel;
+    lblLogin: TLabel;
+    lblSenha: TLabel;
+    edtLogin: TEdit;
+    edtSenha: TEdit;
+    imgLogin: TImage;
+    imgSenha: TImage;
+    btnEntrar: TButton;
+    procedure btnEntrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLogin: TfrmLogin;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmLogin.btnEntrarClick(Sender: TObject);
+begin
+  if Trim(edtLogin.Text) = '' then
+  begin
+    edtLogin.SetFocus;
+    Application.MessageBox('Informe o seu usuário.', 'Atenção', MB_OK	+ MB_ICONWARNING);
+  end;
+end;
+
+end.

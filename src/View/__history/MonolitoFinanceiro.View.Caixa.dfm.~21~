@@ -1,0 +1,161 @@
+inherited frmCaixa: TfrmCaixa
+  Caption = 'Caixa'
+  StyleElements = [seFont, seClient, seBorder]
+  TextHeight = 21
+  inherited PnlPrincipal: TCardPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited CardPesquisa: TCard
+      StyleElements = [seFont, seClient, seBorder]
+      inherited PnlPesquisa: TPanel
+        StyleElements = [seFont, seClient, seBorder]
+        inherited lblPesquisar: TLabel
+          StyleElements = [seFont, seClient, seBorder]
+        end
+        object lblTipo: TLabel [1]
+          Left = 293
+          Top = 11
+          Width = 33
+          Height = 21
+          Caption = 'Tipo'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        inherited edtPesquisar: TEdit
+          Width = 225
+          StyleElements = [seFont, seClient, seBorder]
+          ExplicitWidth = 225
+        end
+        object cbTipo: TComboBox
+          Left = 293
+          Top = 38
+          Width = 145
+          Height = 29
+          ItemIndex = 0
+          TabOrder = 2
+          Text = 'TODOS'
+          Items.Strings = (
+            'TODOS'
+            'RECEITA'
+            'DESPESAS')
+        end
+      end
+      inherited PnlPesquisaBotoes: TPanel
+        StyleElements = [seFont, seClient, seBorder]
+      end
+      inherited PnlGrid: TPanel
+        StyleElements = [seFont, seClient, seBorder]
+        inherited DBGrid1: TDBGrid
+          DataSource = DataSource2
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'DATA_CADASTRO'
+              Title.Caption = 'Data'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'NUMERO_DOC'
+              Title.Caption = 'N'#186'Documento'
+              Width = 120
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DESCRICAO'
+              Title.Caption = 'Descri'#231#227'o'
+              Width = 220
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'TIPO'
+              Title.Alignment = taCenter
+              Title.Caption = 'Tipo'
+              Width = 40
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'VALOR'
+              Title.Alignment = taRightJustify
+              Title.Caption = 'valor'
+              Width = 100
+              Visible = True
+            end>
+        end
+      end
+    end
+    inherited CardCadastro: TCard
+      StyleElements = [seFont, seClient, seBorder]
+      object lblNDoc: TLabel [0]
+        Left = 32
+        Top = 44
+        Width = 100
+        Height = 21
+        Caption = 'N'#186'Documento'
+      end
+      object lblDescricao: TLabel [1]
+        Left = 32
+        Top = 79
+        Width = 67
+        Height = 21
+        Caption = 'Descri'#231#227'o'
+      end
+      object lblValor: TLabel [2]
+        Left = 32
+        Top = 115
+        Width = 36
+        Height = 21
+        Caption = 'Valor'
+      end
+      inherited Panel1: TPanel
+        StyleElements = [seFont, seClient, seBorder]
+        inherited btnSalvar: TButton
+          Caption = 'Salvar'
+        end
+      end
+      object edtNDoc: TEdit
+        Left = 144
+        Top = 41
+        Width = 313
+        Height = 29
+        TabOrder = 1
+      end
+      object edtValor: TEdit
+        Left = 145
+        Top = 112
+        Width = 313
+        Height = 29
+        TabOrder = 2
+      end
+      object edtDescricao: TEdit
+        Left = 145
+        Top = 77
+        Width = 313
+        Height = 29
+        TabOrder = 3
+      end
+      object RgTipo: TRadioGroup
+        Left = 32
+        Top = 147
+        Width = 425
+        Height = 70
+        Caption = 'Tipo'
+        Columns = 2
+        ItemIndex = 0
+        Items.Strings = (
+          'Receita'
+          'Despesa')
+        TabOrder = 4
+      end
+    end
+  end
+  inherited DataSource2: TDataSource
+    DataSet = dmCaixa.cdsCaixa
+  end
+end

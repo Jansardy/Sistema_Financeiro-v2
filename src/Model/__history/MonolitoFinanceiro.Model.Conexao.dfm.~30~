@@ -1,0 +1,20 @@
+object dmSistema: TdmSistema
+  OnCreate = DataModuleCreate
+  Height = 427
+  Width = 575
+  object SQLConexao: TFDConnection
+    Params.Strings = (
+      'Database=Z:\projetorad\MonolitoFinanceiroV2\db\Financeiro.db'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 112
+    Top = 80
+  end
+  object FDQuery1: TFDQuery
+    Connection = SQLConexao
+    SQL.Strings = (
+      'Select * from usuarios')
+    Left = 112
+    Top = 184
+  end
+end

@@ -1,0 +1,36 @@
+program MonolitoFinaceiro;
+
+uses
+  Vcl.Forms,
+  MonolitoFinanceiro.View.Principal in 'src\View\MonolitoFinanceiro.View.Principal.pas' {frmPrincipal},
+  MonolitoFinanceiro.View.Cadastro in 'src\View\MonolitoFinanceiro.View.Cadastro.pas' {frmCadastro},
+  MonolitoFinanceiro.View.Splash in 'src\View\MonolitoFinanceiro.View.Splash.pas' {frmSplash},
+  MonolitoFinanceiro.View.Usuarios in 'src\View\MonolitoFinanceiro.View.Usuarios.pas' {frmUsuarios},
+  MonolitoFinanceiro.Model.Conexao in 'src\Model\MonolitoFinanceiro.Model.Conexao.pas' {dmConexao: TDataModule},
+  MonolitoFinanceiro.Model.Usuarios in 'src\Model\MonolitoFinanceiro.Model.Usuarios.pas' {dmUsuarios: TDataModule},
+  MonolitoFinanceiro.Util.Utilitarios in 'src\Util\MonolitoFinanceiro.Util.Utilitarios.pas',
+  MonolitoFinanceiro.View.Login in 'src\View\MonolitoFinanceiro.View.Login.pas' {frmLogin},
+  MonolitoFinanceiro.Model.Entidades.Usuarios in 'src\Model\Entidades\MonolitoFinanceiro.Model.Entidades.Usuarios.pas',
+  MonolitoFinanceiro.Model.Sistema in 'src\Model\MonolitoFinanceiro.Model.Sistema.pas' {dmSistema: TDataModule},
+  MonolitoFinanceiro.View.RedefinirSenha in 'src\View\MonolitoFinanceiro.View.RedefinirSenha.pas' {frmRedefinirSenha},
+  MonolitoFinanceiro.Model.Caixa in 'src\Model\MonolitoFinanceiro.Model.Caixa.pas' {DataModule1: TDataModule},
+  MonolitoFinanceiro.View.Caixa in 'src\View\MonolitoFinanceiro.View.Caixa.pas' {frmCaixa},
+  MonolitoFinanceiro.View.CaixaSaldo in 'src\View\MonolitoFinanceiro.View.CaixaSaldo.pas' {frmCaixaSaldo},
+  MonolitoFinanceiro.Model.Entidades.Caixa.Resumo in 'src\Model\Entidades\MonolitoFinanceiro.Model.Entidades.Caixa.Resumo.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TdmConexao, dmConexao);
+  Application.CreateForm(TdmUsuarios, dmUsuarios);
+  Application.CreateForm(TdmSistema, dmSistema);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmCadastro, frmCadastro);
+  Application.CreateForm(TfrmUsuarios, frmUsuarios);
+  Application.CreateForm(TdmCaixa, dmCaixa);
+  Application.CreateForm(TfrmCaixa, frmCaixa);
+  Application.CreateForm(TfrmCaixaSaldo, frmCaixaSaldo);
+  Application.Run;
+end.
